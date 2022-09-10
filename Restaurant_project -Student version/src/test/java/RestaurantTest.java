@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -64,4 +66,35 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //TDD
+    /*
+        Implement a method that returns OrderValue given list of items from the menu
+        -> parameters passed list of names of items
+        -> method should
+            1. search for the item in menu list
+            2. get its price
+            3. add to orderTotal
+            4. return orderTotal
+
+        -> the menu will be specific to restaurant so method can be part of Restaurant class
+
+    * */
+
+    // Failing test case
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER TOtal>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void orader_total_for_selected_menu_items_should_equals_388(){
+
+        // form the selected item list
+        List<String> selectedItems = new ArrayList<>();
+        selectedItems.add("Sweet corn soup");
+        selectedItems.add("Vegetable lasagne");
+
+        int orderTotal = restaurant.getOrderTotal(selectedItems);
+
+        assertEquals(388, orderTotal);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER TOtal>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
