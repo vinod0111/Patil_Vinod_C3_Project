@@ -81,7 +81,7 @@ class RestaurantTest {
 
     * */
 
-    // Failing test case
+    // Passing test case
     //<<<<<<<<<<<<<<<<<<<<<<<ORDER TOtal>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
     public void orader_total_for_selected_menu_items_should_equals_388(){
